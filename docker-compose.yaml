@@ -1,0 +1,65 @@
+version: '3.9'
+services:
+    app:
+        container_name: php-fpm
+        tty: true
+        build:
+            context: .
+            dockerfile: ./docker/php-fpm/Dockerfile
+        image: php
+        restart: unless-stopped
+        volumes:
+            - ./:/var/www
+            - ./docker/php-fpm/php.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - app-network
+    webserver:
+        container_name: nginx
+        image: nginx:alpine
+        restart: unless-stopped
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - app-network
+    db:
+        container_name: mysql
+        image: mysql
+        restart: unless-stopped
+        tty: true
+        volumes:
+            - ./db_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: stage
+            MYSQL_USER: example
+            MYSQL_PASSWORD: secret2
+        networks:
+            - app-network
+    redis:
+        container_name: redis
+        image: redis:latest
+        restart: always
+        ports:
+            - "6379:6379"
+        volumes:
+            - ./redis_data:/root/redis
+        environment:
+            - REDIS_PASSWORD=my-password
+            - REDIS_PORT=6379
+            - REDIS_DATABASES=5
+        networks:
+            - app-network
+    composer:
+        image: composer
+        volumes:
+            - ./:/var/www
+        working_dir: /var/www
+networks:
+    app-network:
+        driver: bridge

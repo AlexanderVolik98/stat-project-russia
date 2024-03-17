@@ -1,0 +1,385 @@
+*,
+::after,
+::before {
+    box-sizing: content-box;
+}
+
+body {
+    margin: 0;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+}
+
+hr {
+    background-color: rgba(43, 112, 177, 0.50);
+    border-top: 0.5px solid rgba(43, 112, 177, 0.50);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    text-decoration-line: underline;
+    text-decoration-color: rgba(43, 112, 177, 0.50);
+    text-decoration-thickness: 3px;
+}
+
+.stat__regional-organs_active,
+.extra-info__regional-organs_inactive {
+    display: flex;
+}
+
+.project-info {
+    font-size: 12px;
+}
+
+.blue-border-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(43, 112, 177, 1);
+    background-color: rgba(43, 112, 177, 0.01);
+}
+
+.stat__third-row-panels {
+    margin-top: 5px;
+}
+
+.blue-border-wrapper_bc-white {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(43, 112, 177, 0.50);
+    padding: 10px;
+    background-color: white;
+}
+
+::-webkit-scrollbar {
+    /* chrome based */
+    width: 0px;
+    /* ширина scrollbar'a */
+    background: transparent;
+    /* опционально */
+}
+
+html {
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.box {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.box--hidden {
+    opacity: 0;
+}
+
+
+.adaptive {
+    height: 100%;
+    margin: auto;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+
+.stat__first-row-panels {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    height: 165px;
+}
+
+.stat__second-row-panels {
+    display: flex;
+    gap: 5px;
+}
+
+.stat__territory {
+    display: flex;
+    gap: 5px;
+}
+
+.stat__territory_interactive-panel {
+    display: flex;
+    flex: 3;
+}
+
+.stat__territory-age_header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat__territory_interactive-panel {
+    display: flex;
+}
+
+.stat__eur {
+    justify-content: center;
+}
+
+.stat__bots-eur,
+.stat__rates-usd,
+.stat__rates-cny,
+.stat__rates-gbp,
+.stat__age-info {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.stat__age-info-wrapper {
+    display: flex;
+}
+
+.stat__gbp,
+.stat__cny {
+    flex: 1;
+    justify-content: center;
+}
+
+
+.y-hr-like {
+    border-left: 1px solid #07C;
+    height: 100%;
+}
+
+.y-hr-like-diagramm {
+    border-left: 1px solid black;
+    height: 300px;
+}
+
+.x-hr-like-diagramm {
+    border-bottom: 1px solid black;
+    width: 300px;
+}
+
+.key {
+    color: #07C;
+}
+
+.stat__counter-item-title {
+    color: #07C;
+}
+
+.stat__rates-usd {
+    display: flex;
+}
+
+.stat__usd {
+    flex: 1.4;
+    justify-content: center;
+}
+
+.stat__wallet-info_currency {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat__wallet {
+    font-size: 20px;
+}
+
+.stat__wallet-info_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat__wallet-info_currency-btc,
+.stat__wallet-info_currency-litecoin {
+    display: flex;
+    gap: 5px;
+}
+
+.stat__sales-counter,
+.stat__sources-sale-counter,
+.stat__discount-counter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat__sales-counter__item,
+.stat__sources-sale-counter__item,
+.stat__sales-info,
+.stat__discount-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat__rate-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat__sales-counter__item,
+.stat__sources-sale-counter__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.territory_list-content_subject {
+    align-items: center;
+    display: flex;
+}
+
+.extra-info__regional-organs_content,
+.extra-info__universities_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extra-info__universities_list {
+    margin-top: 0;
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 30px;
+}
+
+
+.stat__territory-age_list {
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.stat__territory-age_description {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1px;
+    align-self: center;
+}
+
+.extra-info__regional-organs_title {
+    font-size: 17px;
+}
+
+.stat__territory-age_description,
+.stat__territory_list-title_net-profit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.title_age {
+    font-size: 20px;
+}
+
+.stat__territory-age_title {
+    align-self: center;
+}
+
+.description_age-workable-sitizens {
+    font-size: 20px;
+}
+
+.title_money-circulation-value,
+.title_net-profit-value {
+    font-size: 30px;
+}
+
+
+.stat__territory_diagramm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat__territory_map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat__territory_diagramm__item {
+    width: 25px;
+    background-color: #fdad00;
+}
+
+.stat__territory_diagramm__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+}
+
+.stat__territory {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat__currencies {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 18px;
+}
+
+.territory-list {
+    font-size: 20px;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.territory-list {
+    display: none;
+    margin: 0;
+
+    flex-direction: column;
+}
+
+.stat__update-territory_diagramm_button {
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.stat__update-territory_diagramm_button:hover {
+    cursor: pointer;
+}
+
+.territory-subject {
+    --territorySubjectColor: '#07C';
+    justify-content: center;
+
+    align-content: center;
+    display: flex;
+    align-self: center;
+
+    border: 3px solid white;
+}
+
