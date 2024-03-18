@@ -6,7 +6,6 @@
     "require": {
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "ext-redis": "*",
         "composer/package-versions-deprecated": "1.11.99.4",
         "doctrine/annotations": "^1.14",
         "doctrine/doctrine-bundle": "^2.8",
