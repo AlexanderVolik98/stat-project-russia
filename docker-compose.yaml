@@ -7,7 +7,7 @@ services:
             context: .
             dockerfile: ./docker/php-fpm/Dockerfile
         image: php
-        restart: unless-stopped
+        restart: always
         volumes:
             - ./:/var/www
             - ./docker/php-fpm/php.ini:/usr/local/etc/php/conf.d/local.ini
@@ -16,7 +16,7 @@ services:
     webserver:
         container_name: nginx
         image: nginx:alpine
-        restart: unless-stopped
+        restart: always
         ports:
             - "80:80"
             - "443:443"
@@ -28,7 +28,7 @@ services:
     db:
         container_name: mysql
         image: mysql
-        restart: unless-stopped
+        restart: always
         tty: true
         volumes:
             - ./db_data:/var/lib/mysql
